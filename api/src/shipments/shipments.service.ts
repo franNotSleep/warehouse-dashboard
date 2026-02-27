@@ -41,6 +41,15 @@ export class ShipmentsService {
         { outShipmentId: outShipment.id, status: OrderStatus.PICKING },
       );
 
+      const event = new ShipmentStatusChangeEvent(this.eventEmitter, {
+        shipmentId: outShipment.id,
+        newStatus: ShipmentStatus.LOADING,
+        previousStatus: ShipmentStatus.LOADING,
+        type: ShipmentType.OUTBOUND,
+      });
+
+      event.emit();
+
       outShipmentId = outShipment.id;
     });
 
