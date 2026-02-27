@@ -6,7 +6,7 @@
 **Folder structure**
 
 ├── api
-└── client
+└── web
 └── seeders
 
 
@@ -15,7 +15,7 @@
 The client was built using **next.js**:
 
 ```bash
-cd client
+cd web
 pnpm install
 pnpm dev
 ```
