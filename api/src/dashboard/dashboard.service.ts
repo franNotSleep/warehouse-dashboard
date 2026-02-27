@@ -35,8 +35,8 @@ export class DashboardService {
     return {
       ordersCount: +count,
       totalUnits: +units,
-      totalPallets: pallets,
-      percentageOnTime: await this.getPercentageOnTime(),
+      totalPallets: pallets || 0,
+      percentageOnTime: (await this.getPercentageOnTime()) || 0,
     };
   }
 
