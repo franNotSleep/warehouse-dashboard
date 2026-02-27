@@ -27,9 +27,8 @@ Because i'm a great person, the backend was made using **nest.js** + **docker** 
 ```
 cd api 
 cp .env.example .env
+docker compose -f compose.dev.yaml run api npx @better-auth/cli migrate # better auth migrations
 docker compose -f compose.dev.yaml up 
-npx @better-auth/cli migrate # better auth migrations
-docker compose -f compose.dev.yaml up # re-run the project
 ```
 
 *If you've done this with success, you should see in the output, your email and password for your admin.*
